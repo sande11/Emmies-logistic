@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emmie's Enterprises - Premier Logistics & Transportation Services</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -33,7 +37,7 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-truck text-3xl text-primary mr-3"></i>
+                        <img src="assets/logo.png" alt="Emmie's Enterprises Logo" class="h-10 w-auto mr-3">
                         <span class="text-2xl font-bold text-gray-900">Emmie's Enterprises</span>
                     </div>
                 </div>
@@ -81,7 +85,7 @@
                         <i class="fas fa-award mr-2"></i>
                         <span class="text-sm font-semibold">Certified Transport Services</span>
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-center">
                         Premier 
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-gradient">Logistics</span> 
                         Solutions
@@ -122,38 +126,9 @@
                 <!-- Right Content - Truck Illustration -->
                 <div class="relative">
                     <div class="relative z-10">
-                        <!-- Main Truck SVG -->
+                        <!-- Main Truck Image -->
                         <div class="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-                            <svg viewBox="0 0 400 200" class="w-full h-auto">
-                                <!-- Truck Body -->
-                                <rect x="50" y="100" width="200" height="60" fill="#ff6b35" rx="5"/>
-                                <rect x="250" y="120" width="80" height="40" fill="#ff4d00" rx="3"/>
-                                
-                                <!-- Cab -->
-                                <rect x="250" y="80" width="80" height="40" fill="#0f4a6a" rx="5"/>
-                                
-                                <!-- Windows -->
-                                <rect x="260" y="85" width="25" height="20" fill="#87ceeb" rx="2"/>
-                                <rect x="295" y="85" width="25" height="20" fill="#87ceeb" rx="2"/>
-                                
-                                <!-- Wheels -->
-                                <circle cx="80" cy="170" r="15" fill="#333"/>
-                                <circle cx="80" cy="170" r="8" fill="#666"/>
-                                <circle cx="220" cy="170" r="15" fill="#333"/>
-                                <circle cx="220" cy="170" r="8" fill="#666"/>
-                                <circle cx="280" cy="170" r="15" fill="#333"/>
-                                <circle cx="280" cy="170" r="8" fill="#666"/>
-                                
-                                <!-- Cargo boxes -->
-                                <rect x="60" y="110" width="25" height="25" fill="#8B4513" rx="2"/>
-                                <rect x="90" y="110" width="25" height="25" fill="#D2691E" rx="2"/>
-                                <rect x="120" y="110" width="25" height="25" fill="#8B4513" rx="2"/>
-                                <rect x="150" y="110" width="25" height="25" fill="#D2691E" rx="2"/>
-                                
-                                <!-- Details -->
-                                <rect x="255" y="125" width="15" height="8" fill="#fff" rx="1"/>
-                                <rect x="275" y="125" width="15" height="8" fill="#fff" rx="1"/>
-                            </svg>
+                            <img src="assets/WhatsApp Image 2025-08-19 at 10.02.06.jpeg" alt="Mitsubishi Fuso Fighter - Emmie's Enterprises Fleet" class="w-full h-auto rounded-2xl shadow-lg object-cover max-h-64" style="object-position: center 30%">
                         </div>
                         
                         <!-- Floating Stats -->
@@ -276,41 +251,49 @@
             <div class="mb-16">
                 <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                     <div class="grid lg:grid-cols-2 gap-0">
-                        <!-- Vehicle Image Area -->
+                        <!-- Vehicle Image Area with Slideshow -->
                         <div class="bg-gradient-to-br from-primary to-dark p-12 flex items-center justify-center relative overflow-hidden">
-                            <!-- Truck SVG -->
-                            <div class="relative z-10">
-                                <svg viewBox="0 0 500 250" class="w-full h-auto max-w-md">
-                                    <!-- Truck Body -->
-                                    <rect x="50" y="120" width="250" height="75" fill="#ff6b35" rx="8"/>
-                                    <rect x="300" y="140" width="100" height="55" fill="#ff4d00" rx="5"/>
+                            <!-- Image Slideshow -->
+                            <div class="relative z-10 w-full max-w-md">
+                                <div class="slideshow-container relative">
+                                    <!-- Slides -->
+                                    <div class="slide active">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.06.jpeg" alt="Mitsubishi Fuso Fighter - Front View" class="w-full h-auto object-contain rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.06 (1).jpeg" alt="Mitsubishi Fuso Fighter - Side View" class="w-full h-auto object-contain rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.06 (2).jpeg" alt="Mitsubishi Fuso Fighter - Detail View" class="w-full h-auto object-contain rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.07.jpeg" alt="Mitsubishi Fuso Fighter - Professional View" class="w-full h-auto object-contain rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.08.jpeg" alt="Mitsubishi Fuso Fighter - Fleet View" class="w-full h-auto object-contain rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.09.jpeg" alt="Mitsubishi Fuso Fighter - Another View" class="w-full h-auto object-contain rounded-2xl shadow-2xl slide-image">
+                                    </div>
                                     
-                                    <!-- Cab -->
-                                    <rect x="300" y="95" width="100" height="45" fill="#0f4a6a" rx="8"/>
+                                    <!-- Navigation arrows -->
+                                    <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
                                     
-                                    <!-- Windows -->
-                                    <rect x="315" y="105" width="30" height="25" fill="#87ceeb" rx="3"/>
-                                    <rect x="355" y="105" width="30" height="25" fill="#87ceeb" rx="3"/>
-                                    
-                                    <!-- Wheels -->
-                                    <circle cx="90" cy="205" r="20" fill="#333"/>
-                                    <circle cx="90" cy="205" r="12" fill="#666"/>
-                                    <circle cx="250" cy="205" r="20" fill="#333"/>
-                                    <circle cx="250" cy="205" r="12" fill="#666"/>
-                                    <circle cx="330" cy="205" r="20" fill="#333"/>
-                                    <circle cx="330" cy="205" r="12" fill="#666"/>
-                                    
-                                    <!-- Cargo boxes -->
-                                    <rect x="70" y="135" width="30" height="30" fill="#8B4513" rx="3"/>
-                                    <rect x="105" y="135" width="30" height="30" fill="#D2691E" rx="3"/>
-                                    <rect x="140" y="135" width="30" height="30" fill="#8B4513" rx="3"/>
-                                    <rect x="175" y="135" width="30" height="30" fill="#D2691E" rx="3"/>
-                                    
-                                    <!-- Details -->
-                                    <rect x="310" y="150" width="20" height="10" fill="#fff" rx="2"/>
-                                    <rect x="340" y="150" width="20" height="10" fill="#fff" rx="2"/>
-                                    <rect x="370" y="150" width="20" height="10" fill="#fff" rx="2"/>
-                                </svg>
+                                    <!-- Dots indicator -->
+                                    <div class="dots-container absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                        <span class="dot active bg-white w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="0"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="1"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="2"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="3"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="4"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="5"></span>
+                                    </div>
+                                </div>
                             </div>
                             
                             <!-- Background decorations -->
@@ -468,7 +451,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">About Emmie's Enterprises</h2>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6 text-center">About Emmie's Enterprises</h2>
                     <p class="text-lg text-gray-600 mb-6 text-center">
                         Based in Mzuzu with nationwide reach, Emmie's Enterprises is a trusted logistics and transportation company 
                         specializing in professional vehicle hiring services. We are pre-qualified service providers for electoral 
@@ -631,26 +614,26 @@
                         <p class="text-gray-300 text-center">Fill out the form below and our team will contact you within 24 hours</p>
                     </div>
                     
-                    <form class="space-y-6">
+                    <form id="contact-form" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                                <input type="text" name="full_name" id="full_name" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Enter your full name">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number *</label>
-                                <input type="tel" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                                <input type="tel" name="phone" id="phone" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Enter your phone number">
                             </div>
                         </div>
                         
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
-                                <input type="email" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Enter your email address">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Service Required *</label>
-                                <select required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                                <select name="service" id="service" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
                                     <option value="">Select a service...</option>
                                     <option value="electoral">Electoral/Polling Services</option>
                                     <option value="government">Government Contract</option>
@@ -662,7 +645,7 @@
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
-                            <textarea rows="4" class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Please describe your transportation requirements, dates, locations, and any special needs..."></textarea>
+                            <textarea name="message" id="message" rows="4" class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Please describe your transportation requirements, dates, locations, and any special needs..."></textarea>
                         </div>
                         
                         <div class="flex flex-col sm:flex-row gap-4">
@@ -687,7 +670,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="col-span-2">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-truck text-3xl text-secondary mr-3"></i>
+                        <img src="assets/logo.png" alt="Emmie's Enterprises Logo" class="h-10 w-auto mr-3 filter brightness-0 invert">
                         <span class="text-2xl font-bold">Emmie's Enterprises</span>
                     </div>
                     <p class="text-gray-400 mb-4 text-center">
@@ -870,8 +853,13 @@
             });
         });
 
-        // Form submission with improved UX
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+
+        // Form submission with EmailJS
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitButton = e.target.querySelector('button[type="submit"]');
@@ -881,24 +869,160 @@
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
             submitButton.disabled = true;
             
-            // Simulate form submission
-            setTimeout(() => {
-                submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
-                submitButton.classList.remove('from-secondary', 'to-orange-gradient');
-                submitButton.classList.add('from-green-500', 'to-green-600');
-                
-                // Reset form after delay
-                setTimeout(() => {
-                    e.target.reset();
-                    submitButton.innerHTML = originalText;
-                    submitButton.disabled = false;
-                    submitButton.classList.remove('from-green-500', 'to-green-600');
-                    submitButton.classList.add('from-secondary', 'to-orange-gradient');
-                }, 2000);
-            }, 1500);
+            // Collect form data
+            const formData = {
+                full_name: document.getElementById('full_name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value,
+                to_email: 'kelvinsande9@gmail.com' // Your email address
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success state
+                    submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                    submitButton.classList.remove('from-secondary', 'to-orange-gradient');
+                    submitButton.classList.add('from-green-500', 'to-green-600');
+                    
+                    // Show success message
+                    showNotification('Success! Your quote request has been sent. We\'ll contact you within 24 hours.', 'success');
+                    
+                    // Reset form after delay
+                    setTimeout(() => {
+                        e.target.reset();
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('from-green-500', 'to-green-600');
+                        submitButton.classList.add('from-secondary', 'to-orange-gradient');
+                    }, 3000);
+                })
+                .catch(function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error state
+                    submitButton.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Send Failed';
+                    submitButton.classList.remove('from-secondary', 'to-orange-gradient');
+                    submitButton.classList.add('from-red-500', 'to-red-600');
+                    
+                    // Show error message
+                    showNotification('Failed to send message. Please try again or contact us directly.', 'error');
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('from-red-500', 'to-red-600');
+                        submitButton.classList.add('from-secondary', 'to-orange-gradient');
+                    }, 3000);
+                });
         });
 
-        // Add CSS for fade in animation and active navigation states
+        // Notification system
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm transform transition-all duration-300 translate-x-full`;
+            
+            if (type === 'success') {
+                notification.classList.add('bg-green-500', 'text-white');
+                notification.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${message}`;
+            } else {
+                notification.classList.add('bg-red-500', 'text-white');
+                notification.innerHTML = `<i class="fas fa-exclamation-circle mr-2"></i>${message}`;
+            }
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 5000);
+        }
+
+        // Slideshow functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+            let slideInterval;
+
+            // Show specific slide
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            // Next slide
+            function nextSlide() {
+                const next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }
+
+            // Previous slide
+            function prevSlide() {
+                const prev = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prev);
+            }
+
+            // Auto slideshow
+            function startSlideshow() {
+                slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopSlideshow() {
+                clearInterval(slideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopSlideshow();
+                startSlideshow(); // Restart auto slideshow
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopSlideshow();
+                startSlideshow(); // Restart auto slideshow
+            });
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    stopSlideshow();
+                    startSlideshow(); // Restart auto slideshow
+                });
+            });
+
+            // Pause on hover
+            const slideshowContainer = document.querySelector('.slideshow-container');
+            slideshowContainer.addEventListener('mouseenter', stopSlideshow);
+            slideshowContainer.addEventListener('mouseleave', startSlideshow);
+
+            // Start the slideshow
+            startSlideshow();
+        });
+
+        // Add CSS for fade in animation, active navigation states, and slideshow
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeInUp {
@@ -945,6 +1069,63 @@
             /* Smooth transitions for all nav links */
             .nav-link, .mobile-nav-link {
                 transition: all 0.3s ease;
+            }
+            
+            /* Slideshow Styles */
+            .slideshow-container {
+                position: relative;
+                width: 100%;
+            }
+            
+            .slide {
+                display: none;
+                animation: slideIn 0.5s ease-in-out;
+            }
+            
+            .slide.active {
+                display: block;
+            }
+            
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateX(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            /* Improve image display */
+            .slide-image {
+                max-height: 400px;
+                filter: brightness(1.1) contrast(1.05);
+            }
+            
+            .prev-btn, .next-btn {
+                z-index: 20;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .slideshow-container:hover .prev-btn,
+            .slideshow-container:hover .next-btn {
+                opacity: 1;
+            }
+            
+            .dot.active {
+                background-color: white !important;
+                transform: scale(1.2);
+            }
+            
+            .dot {
+                transition: all 0.3s ease;
+            }
+            
+            .dot:hover {
+                background-color: rgba(255, 255, 255, 0.8) !important;
+                transform: scale(1.1);
             }
         `;
         document.head.appendChild(style);
