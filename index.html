@@ -8,6 +8,8 @@
     <link rel="shortcut icon" type="image/png" href="assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -612,26 +614,26 @@
                         <p class="text-gray-300 text-center">Fill out the form below and our team will contact you within 24 hours</p>
                     </div>
                     
-                    <form class="space-y-6">
+                    <form id="contact-form" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                                <input type="text" name="full_name" id="full_name" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Enter your full name">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number *</label>
-                                <input type="tel" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                                <input type="tel" name="phone" id="phone" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Enter your phone number">
                             </div>
                         </div>
                         
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
-                                <input type="email" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Enter your email address">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Service Required *</label>
-                                <select required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                                <select name="service" id="service" required class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
                                     <option value="">Select a service...</option>
                                     <option value="electoral">Electoral/Polling Services</option>
                                     <option value="government">Government Contract</option>
@@ -643,7 +645,7 @@
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
-                            <textarea rows="4" class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Please describe your transportation requirements, dates, locations, and any special needs..."></textarea>
+                            <textarea name="message" id="message" rows="4" class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Please describe your transportation requirements, dates, locations, and any special needs..."></textarea>
                         </div>
                         
                         <div class="flex flex-col sm:flex-row gap-4">
@@ -851,8 +853,13 @@
             });
         });
 
-        // Form submission with improved UX
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+
+        // Form submission with EmailJS
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitButton = e.target.querySelector('button[type="submit"]');
@@ -862,22 +869,87 @@
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
             submitButton.disabled = true;
             
-            // Simulate form submission
-            setTimeout(() => {
-                submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
-                submitButton.classList.remove('from-secondary', 'to-orange-gradient');
-                submitButton.classList.add('from-green-500', 'to-green-600');
-                
-                // Reset form after delay
-                setTimeout(() => {
-                    e.target.reset();
-                    submitButton.innerHTML = originalText;
-                    submitButton.disabled = false;
-                    submitButton.classList.remove('from-green-500', 'to-green-600');
-                    submitButton.classList.add('from-secondary', 'to-orange-gradient');
-                }, 2000);
-            }, 1500);
+            // Collect form data
+            const formData = {
+                full_name: document.getElementById('full_name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value,
+                to_email: 'kelvinsande9@gmail.com' // Your email address
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success state
+                    submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                    submitButton.classList.remove('from-secondary', 'to-orange-gradient');
+                    submitButton.classList.add('from-green-500', 'to-green-600');
+                    
+                    // Show success message
+                    showNotification('Success! Your quote request has been sent. We\'ll contact you within 24 hours.', 'success');
+                    
+                    // Reset form after delay
+                    setTimeout(() => {
+                        e.target.reset();
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('from-green-500', 'to-green-600');
+                        submitButton.classList.add('from-secondary', 'to-orange-gradient');
+                    }, 3000);
+                })
+                .catch(function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error state
+                    submitButton.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Send Failed';
+                    submitButton.classList.remove('from-secondary', 'to-orange-gradient');
+                    submitButton.classList.add('from-red-500', 'to-red-600');
+                    
+                    // Show error message
+                    showNotification('Failed to send message. Please try again or contact us directly.', 'error');
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('from-red-500', 'to-red-600');
+                        submitButton.classList.add('from-secondary', 'to-orange-gradient');
+                    }, 3000);
+                });
         });
+
+        // Notification system
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm transform transition-all duration-300 translate-x-full`;
+            
+            if (type === 'success') {
+                notification.classList.add('bg-green-500', 'text-white');
+                notification.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${message}`;
+            } else {
+                notification.classList.add('bg-red-500', 'text-white');
+                notification.innerHTML = `<i class="fas fa-exclamation-circle mr-2"></i>${message}`;
+            }
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 5000);
+        }
 
         // Slideshow functionality
         document.addEventListener('DOMContentLoaded', function() {
