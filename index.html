@@ -122,38 +122,9 @@
                 <!-- Right Content - Truck Illustration -->
                 <div class="relative">
                     <div class="relative z-10">
-                        <!-- Main Truck SVG -->
+                        <!-- Main Truck Image -->
                         <div class="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-                            <svg viewBox="0 0 400 200" class="w-full h-auto">
-                                <!-- Truck Body -->
-                                <rect x="50" y="100" width="200" height="60" fill="#ff6b35" rx="5"/>
-                                <rect x="250" y="120" width="80" height="40" fill="#ff4d00" rx="3"/>
-                                
-                                <!-- Cab -->
-                                <rect x="250" y="80" width="80" height="40" fill="#0f4a6a" rx="5"/>
-                                
-                                <!-- Windows -->
-                                <rect x="260" y="85" width="25" height="20" fill="#87ceeb" rx="2"/>
-                                <rect x="295" y="85" width="25" height="20" fill="#87ceeb" rx="2"/>
-                                
-                                <!-- Wheels -->
-                                <circle cx="80" cy="170" r="15" fill="#333"/>
-                                <circle cx="80" cy="170" r="8" fill="#666"/>
-                                <circle cx="220" cy="170" r="15" fill="#333"/>
-                                <circle cx="220" cy="170" r="8" fill="#666"/>
-                                <circle cx="280" cy="170" r="15" fill="#333"/>
-                                <circle cx="280" cy="170" r="8" fill="#666"/>
-                                
-                                <!-- Cargo boxes -->
-                                <rect x="60" y="110" width="25" height="25" fill="#8B4513" rx="2"/>
-                                <rect x="90" y="110" width="25" height="25" fill="#D2691E" rx="2"/>
-                                <rect x="120" y="110" width="25" height="25" fill="#8B4513" rx="2"/>
-                                <rect x="150" y="110" width="25" height="25" fill="#D2691E" rx="2"/>
-                                
-                                <!-- Details -->
-                                <rect x="255" y="125" width="15" height="8" fill="#fff" rx="1"/>
-                                <rect x="275" y="125" width="15" height="8" fill="#fff" rx="1"/>
-                            </svg>
+                            <img src="assets/WhatsApp Image 2025-08-19 at 10.02.06.jpeg" alt="Mitsubishi Fuso Fighter - Emmie's Enterprises Fleet" class="w-full h-auto rounded-2xl shadow-lg object-cover max-h-64" style="object-position: center 30%">
                         </div>
                         
                         <!-- Floating Stats -->
@@ -276,41 +247,49 @@
             <div class="mb-16">
                 <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                     <div class="grid lg:grid-cols-2 gap-0">
-                        <!-- Vehicle Image Area -->
+                        <!-- Vehicle Image Area with Slideshow -->
                         <div class="bg-gradient-to-br from-primary to-dark p-12 flex items-center justify-center relative overflow-hidden">
-                            <!-- Truck SVG -->
-                            <div class="relative z-10">
-                                <svg viewBox="0 0 500 250" class="w-full h-auto max-w-md">
-                                    <!-- Truck Body -->
-                                    <rect x="50" y="120" width="250" height="75" fill="#ff6b35" rx="8"/>
-                                    <rect x="300" y="140" width="100" height="55" fill="#ff4d00" rx="5"/>
+                            <!-- Image Slideshow -->
+                            <div class="relative z-10 w-full max-w-md">
+                                <div class="slideshow-container relative">
+                                    <!-- Slides -->
+                                    <div class="slide active">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.06.jpeg" alt="Mitsubishi Fuso Fighter - Front View" class="w-full h-80 object-cover object-center rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.06 (1).jpeg" alt="Mitsubishi Fuso Fighter - Side View" class="w-full h-80 object-cover object-center rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.06 (2).jpeg" alt="Mitsubishi Fuso Fighter - Detail View" class="w-full h-80 object-cover object-center rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.07.jpeg" alt="Mitsubishi Fuso Fighter - Professional View" class="w-full h-80 object-cover object-center rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.08.jpeg" alt="Mitsubishi Fuso Fighter - Fleet View" class="w-full h-80 object-cover object-center rounded-2xl shadow-2xl slide-image">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="assets/WhatsApp Image 2025-08-19 at 10.02.09.jpeg" alt="Mitsubishi Fuso Fighter - Another View" class="w-full h-80 object-cover object-center rounded-2xl shadow-2xl slide-image">
+                                    </div>
                                     
-                                    <!-- Cab -->
-                                    <rect x="300" y="95" width="100" height="45" fill="#0f4a6a" rx="8"/>
+                                    <!-- Navigation arrows -->
+                                    <button class="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
                                     
-                                    <!-- Windows -->
-                                    <rect x="315" y="105" width="30" height="25" fill="#87ceeb" rx="3"/>
-                                    <rect x="355" y="105" width="30" height="25" fill="#87ceeb" rx="3"/>
-                                    
-                                    <!-- Wheels -->
-                                    <circle cx="90" cy="205" r="20" fill="#333"/>
-                                    <circle cx="90" cy="205" r="12" fill="#666"/>
-                                    <circle cx="250" cy="205" r="20" fill="#333"/>
-                                    <circle cx="250" cy="205" r="12" fill="#666"/>
-                                    <circle cx="330" cy="205" r="20" fill="#333"/>
-                                    <circle cx="330" cy="205" r="12" fill="#666"/>
-                                    
-                                    <!-- Cargo boxes -->
-                                    <rect x="70" y="135" width="30" height="30" fill="#8B4513" rx="3"/>
-                                    <rect x="105" y="135" width="30" height="30" fill="#D2691E" rx="3"/>
-                                    <rect x="140" y="135" width="30" height="30" fill="#8B4513" rx="3"/>
-                                    <rect x="175" y="135" width="30" height="30" fill="#D2691E" rx="3"/>
-                                    
-                                    <!-- Details -->
-                                    <rect x="310" y="150" width="20" height="10" fill="#fff" rx="2"/>
-                                    <rect x="340" y="150" width="20" height="10" fill="#fff" rx="2"/>
-                                    <rect x="370" y="150" width="20" height="10" fill="#fff" rx="2"/>
-                                </svg>
+                                    <!-- Dots indicator -->
+                                    <div class="dots-container absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                        <span class="dot active bg-white w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="0"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="1"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="2"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="3"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="4"></span>
+                                        <span class="dot bg-white/50 w-2 h-2 rounded-full cursor-pointer transition-all duration-300" data-slide="5"></span>
+                                    </div>
+                                </div>
                             </div>
                             
                             <!-- Background decorations -->
@@ -898,7 +877,78 @@
             }, 1500);
         });
 
-        // Add CSS for fade in animation and active navigation states
+        // Slideshow functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+            let slideInterval;
+
+            // Show specific slide
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            // Next slide
+            function nextSlide() {
+                const next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }
+
+            // Previous slide
+            function prevSlide() {
+                const prev = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prev);
+            }
+
+            // Auto slideshow
+            function startSlideshow() {
+                slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopSlideshow() {
+                clearInterval(slideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopSlideshow();
+                startSlideshow(); // Restart auto slideshow
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopSlideshow();
+                startSlideshow(); // Restart auto slideshow
+            });
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    stopSlideshow();
+                    startSlideshow(); // Restart auto slideshow
+                });
+            });
+
+            // Pause on hover
+            const slideshowContainer = document.querySelector('.slideshow-container');
+            slideshowContainer.addEventListener('mouseenter', stopSlideshow);
+            slideshowContainer.addEventListener('mouseleave', startSlideshow);
+
+            // Start the slideshow
+            startSlideshow();
+        });
+
+        // Add CSS for fade in animation, active navigation states, and slideshow
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeInUp {
@@ -945,6 +995,63 @@
             /* Smooth transitions for all nav links */
             .nav-link, .mobile-nav-link {
                 transition: all 0.3s ease;
+            }
+            
+            /* Slideshow Styles */
+            .slideshow-container {
+                position: relative;
+                width: 100%;
+            }
+            
+            .slide {
+                display: none;
+                animation: slideIn 0.5s ease-in-out;
+            }
+            
+            .slide.active {
+                display: block;
+            }
+            
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateX(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            /* Hide text area from images using object positioning */
+            .slide-image {
+                object-position: center 30% !important;
+                filter: brightness(1.1) contrast(1.05);
+            }
+            
+            .prev-btn, .next-btn {
+                z-index: 20;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .slideshow-container:hover .prev-btn,
+            .slideshow-container:hover .next-btn {
+                opacity: 1;
+            }
+            
+            .dot.active {
+                background-color: white !important;
+                transform: scale(1.2);
+            }
+            
+            .dot {
+                transition: all 0.3s ease;
+            }
+            
+            .dot:hover {
+                background-color: rgba(255, 255, 255, 0.8) !important;
+                transform: scale(1.1);
             }
         `;
         document.head.appendChild(style);
